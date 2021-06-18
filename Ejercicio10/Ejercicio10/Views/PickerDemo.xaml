@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio10.PickerDemo">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="10">
+                <Label Text="Monkeys" BackgroundColor="DarkBlue" TextColor="White" Padding="5" FontSize="Large" HorizontalTextAlignment="Center"
+                   FontAttributes="Bold" 
+                   HorizontalOptions="FillAndExpand" />
+                <Picker Title="Select a monkey"     TextColor="Blue"  BackgroundColor="Azure"       
+                    ItemsSource="{Binding Monkeys}" 
+                    ItemDisplayBinding="{Binding Name}"
+                    SelectedItem="{Binding SelectedMonkey}" />
+                <Label Text="{Binding SelectedMonkey.Name}" 
+                   HorizontalOptions="Center" 
+                   Style="{DynamicResource TitleStyle}" />
+                <Label Text="{Binding SelectedMonkey.Location}"
+                   FontAttributes="Italic" HorizontalOptions="Center" />
+                <Image Source="{Binding SelectedMonkey.ImageUrl}" 
+                   HeightRequest="200" WidthRequest="200"
+                   HorizontalOptions="CenterAndExpand" />
+                <Label Text="{Binding SelectedMonkey.Details}" 
+                   Style="{DynamicResource BodyStyle}" />
+            </StackLayout>
+
+        </ScrollView>
+        
+        
+    </ContentPage.Content>
+</ContentPage>
